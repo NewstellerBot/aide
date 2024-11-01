@@ -1,9 +1,7 @@
-import { onWindowMessage } from "./window";
+import { onWindowMessage } from './window'
+import { executeGraph } from './llm'
 
 export const EVENTS = {
-
-    'some_event:do_something': () => {
-        // do something here
-    },
-    "window:message": onWindowMessage,
+  'window:message': onWindowMessage,
+  'llm:execute': (_, data) => console.log(data),
 }

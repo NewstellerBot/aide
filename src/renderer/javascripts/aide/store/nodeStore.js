@@ -14,6 +14,12 @@ const initialNodes = [
     isConnectable: true,
     type: 'prompt',
   },
+  {
+    id: '3',
+    position: { x: 400, y: 400 },
+    isConnectable: true,
+    type: 'constant',
+  },
 ]
 
 const initialEdges = []
@@ -39,6 +45,12 @@ const useNodeStore = create((set, get) => ({
   },
   setEdges: (edges) => {
     set({ edges })
+  },
+  setPrompt: (id, prompt) => {
+    const nodes = get().nodes.map((node) =>
+      node.id === id ? { ...node, prompt } : node
+    )
+    set({ nodes })
   },
 }))
 
