@@ -22,6 +22,6 @@ const renderApplication = () => {
 
 window.refreshApplication = () => renderApplication()
 
-window.MessagesAPI.onMessage('onload', () => {
+window.messagesApi.onMessage('onload', () => {
   renderApplication()
 })

@@ -1,12 +1,13 @@
 import React, { useCallback, useState } from 'react'
 import { ReactFlow, Background, Controls } from '@xyflow/react'
 
-import PromptNode from './promptNode'
+import { ConstantNode, PromptNode } from './nodes'
 import { useNodeStore } from '../../store/nodeStore'
 import { useShallow } from 'zustand/react/shallow'
 
 const nodeTypes = {
   prompt: PromptNode,
+  constant: ConstantNode,
 }
 
 const selector = (state) => ({
@@ -28,9 +29,6 @@ const Flow = () => {
       onConnect={onConnect}
       nodeTypes={nodeTypes}
       edges={edges}
-      onChange={(e) => {
-        console.log(e)
-      }}
     >
       <Background />
       <Controls />
