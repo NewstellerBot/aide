@@ -1,29 +1,29 @@
 # Aide
 
-> My Aide app built with Electron
+A power tool for prompt engineering.
 
+## Running in development
 
-## Dev
+Please ensure you have node.js, npm, and yarn installed. 
 
-```
-$ npm install
-```
+1. Clone the repository
 
-### Run
-
-```
-$ bozon start
+```bash 
+git clone https://github.com/NewstellerBot/aide.git
 ```
 
-### Package
+2. Install dependencies
 
+```bash
+yarn
 ```
-$ bozon package
+
+3. Run the development server
+
+```bash
+yarn start
 ```
 
-Builds the app for OS X, Linux, and Windows, using [electron-builder](https://github.com/electron-userland/electron-builder).
 
 
-## License
 
-The MIT License (MIT) © Krystian Nowak 2024
