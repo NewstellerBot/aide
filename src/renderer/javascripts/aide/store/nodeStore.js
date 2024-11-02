@@ -1,26 +1,18 @@
 import { applyNodeChanges, applyEdgeChanges, addEdge } from '@xyflow/react'
 import { create } from 'zustand'
+import { v4 as uuid } from 'uuid'
 
-const initialNodes = [
-  {
-    id: '1',
-    position: { x: 10, y: 10 },
-    isConnectable: true,
-    type: 'prompt',
-  },
-  {
-    id: '2',
-    position: { x: 200, y: 200 },
-    isConnectable: true,
-    type: 'prompt',
-  },
-  {
-    id: '3',
-    position: { x: 400, y: 400 },
-    isConnectable: true,
-    type: 'constant',
-  },
-]
+const deafultNode = () => ({
+  id: uuid(),
+  position: { x: 50, y: 50 },
+  prompt: '',
+  response: null,
+  isConnectable: true,
+  isLoading: false,
+  type: 'prompt',
+})
+
+const initialNodes = [deafultNode()]
 
 const initialEdges = []
 
@@ -43,8 +35,27 @@ const useNodeStore = create((set, get) => ({
   setNodes: (nodes) => {
     set({ nodes })
   },
+  setResponse: (id, response) => {
+    console.log('setting response', id, response)
+    const nodes = get().nodes.map((node) =>
+      node.id === id ? { ...node, response } : node
+    )
+    set({ nodes })
+  },
+  startLoadingAll: () => {
+    set({ nodes: get().nodes.map((node) => ({ ...node, isLoading: true })) })
+  },
+  stopLoading: (id) => {
+    const nodes = get().nodes.map((node) =>
+      node.id === id ? { ...node, isLoading: false } : node
+    )
+    set({ nodes })
+  },
   setEdges: (edges) => {
     set({ edges })
+  },
+  addNode: () => {
+    set({ nodes: [...get().nodes, deafultNode()] })
   },
   setPrompt: (id, prompt) => {
     const nodes = get().nodes.map((node) =>

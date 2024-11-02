@@ -7,7 +7,10 @@ contextBridge.exposeInMainWorld('messagesApi', {
   onOnce: (message, callback) => {
     ipcRenderer.once(message, callback)
   },
-)
 
+  sendExecute: (nodes, edges) => {
+    ipcRenderer.send('llm:execute', { nodes, edges })
+  },
+})
 
 export default {}
