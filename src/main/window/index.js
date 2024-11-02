@@ -1,6 +1,5 @@
 import path from 'path'
 import { BrowserWindow, shell } from 'electron'
-// import { getOptimalDimentions, getNewBounds } from 'helpers'
 import { getOptimalDimentions, getNewBounds } from '../helpers'
 
 export default class MainWindow {
