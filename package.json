@@ -1,7 +1,6 @@
 {
     "name": "aide",
     "version": "0.1.0",
-    "type": "module",
     "description": "Aide application build with Electron",
     "author": {
         "name": "Krystian Nowak",
@@ -59,7 +58,7 @@
     },
     "scripts": {
         "lint": "npx eslint --color src",
-        "start": "electron-forge start",
+        "start": "bozon start",
         "package": "electron-forge package",
         "make": "electron-forge make"
     },
@@ -72,6 +71,5 @@
             "publish": null,
             "category": "your.app.category.type"
         }
-    },
-    "main": "src/main/index.js"
+    }
 }
