@@ -20,12 +20,13 @@ const Button = ({
   }
 
   const variantStyles = {
-    primary: 'bg-green-500 text-white hover:bg-green-600',
-    secondary: 'bg-gray-200 text-gray-700 hover:bg-gray-300',
-    danger: 'bg-red-600 text-white hover:bg-red-700',
+    primary: 'bg-green-500 text-white hover:bg-green-600 active:bg-green-700',
+    secondary: 'bg-gray-200 text-gray-700 hover:bg-gray-300 active:bg-gray-400',
+    danger: 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800',
+    ghost: 'bg-transparent text-gray-700 hover:bg-gray-100 active:bg-gray-200',
   }
 
-  const hoverEffect = 'transform hover:scale-[1.02]' // Slightly reduced scale effect
+  const hoverEffect = 'transform hover:scale-[1.02]'
   const disabledStyles = 'opacity-50 cursor-not-allowed'
 
   return (

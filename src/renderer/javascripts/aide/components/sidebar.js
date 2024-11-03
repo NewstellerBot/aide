@@ -48,12 +48,14 @@ export default function Sidebar() {
           Add Node <Plus className="h-3 w-3" />
         </Button>
         <Button
-          variant="secondary"
+          variant="ghost"
           className="flex text-xs items-center justify-center gap-1"
           onClick={() => console.log(nodes)}
         >
           Log
         </Button>
+
+        <div className="w-full h-[1px] bg-gray-300 rounded-full" />
       </div>
     </div>
   )
