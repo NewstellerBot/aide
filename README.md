@@ -18,7 +18,9 @@ git clone https://github.com/NewstellerBot/aide.git
 yarn
 ```
 
-3. Run the development server
+3. Create and populate `.env` file. You can take a look at `.env.example` to populate the actual `.env` file.
+
+4. Run the development server
 
 ```bash
 yarn start

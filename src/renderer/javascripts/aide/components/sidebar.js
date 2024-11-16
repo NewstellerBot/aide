@@ -50,9 +50,12 @@ export default function Sidebar() {
         <Button
           variant="ghost"
           className="flex text-xs items-center justify-center gap-1"
-          onClick={() => console.log(nodes)}
+          onClick={async () => {
+            const res = await window.messagesApi.send('db:getFlows')
+            console.log(res)
+          }}
         >
-          Log
+          DB Test
         </Button>
 
         <div className="w-full h-[1px] bg-gray-300 rounded-full" />
